@@ -55,8 +55,17 @@ public class MainActivity extends AppCompatActivity {
        updateView();
     }
 
+
+    //This function is used to update the view after buttons have been pressed
     private void updateView(){
-        mMessageTextView.setText(getString(R.string.message_format, mCounter));
+        if (mCounter > 10)
+            mMessageTextView.setVisibility(View.INVISIBLE);
+        if (mCounter < 10)
+            mMessageTextView.setVisibility(View.VISIBLE);
+            mMessageTextView.setText(getString(R.string.message_format, mCounter));
+       {
+
+        }
 
     }
 }
